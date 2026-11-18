@@ -1,5 +1,5 @@
 {
-  "name": "app-template",
+  "name": "clinicdesk",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -9,8 +9,8 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "lint": "node --check src/server.js && node --check src/app.js && node --check src/db.js",
-    "test": "node --test"
+    "lint": "node scripts/lint.js",
+    "test": "node --test test/*.test.js"
   },
   "dependencies": {
     "express": "^4.21.2",

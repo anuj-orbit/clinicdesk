@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClinicDesk - Admin</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="module" src="/js/admin.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span id="user-name"></span>
+      <button id="logout-btn" class="btn">Logout</button>
+    </header>
+
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <main>
+      <section class="card">
+        <h2>All Bookings</h2>
+        <div class="form-row">
+          <label for="filter-status">Status</label>
+          <select id="filter-status">
+            <option value="">All</option>
+            <option value="booked">Booked</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="filter-doctor">Doctor</label>
+          <select id="filter-doctor">
+            <option value="">All doctors</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="table" id="all-bookings">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Doctor</th>
+                <th>Patient</th>
+                <th>Start</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="all-bookings-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Audit Log</h2>
+        <div class="form-row">
+          <label for="filter-booking-id">Booking ID</label>
+          <input type="number" id="filter-booking-id" placeholder="Filter by booking id">
+        </div>
+        <div class="table-wrap">
+          <table class="table" id="audit-log">
+            <thead>
+              <tr>
+                <th>At</th>
+                <th>Type</th>
+                <th>Booking ID</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody id="audit-log-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Create Doctor</h2>
+        <form id="doctor-form">
+          <div class="form-row">
+            <label for="doctor-name">Name</label>
+            <input type="text" id="doctor-name" required>
+          </div>
+          <div class="form-row">
+            <label for="doctor-email">Email</label>
+            <input type="email" id="doctor-email" required>
+          </div>
+          <div class="form-row">
+            <label for="doctor-password">Password</label>
+            <input type="password" id="doctor-password" minlength="8" required>
+          </div>
+          <div class="form-row">
+            <label for="doctor-specialty">Specialty (optional)</label>
+            <input type="text" id="doctor-specialty">
+          </div>
+          <button type="submit" class="btn btn-primary">Create doctor</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

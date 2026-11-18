@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClinicDesk - Doctor</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="module" src="/js/doctor.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span id="user-name"></span>
+      <button id="logout-btn" class="btn">Logout</button>
+    </header>
+
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <main>
+      <section class="card">
+        <h2>Weekly Availability</h2>
+        <div id="availability-list"></div>
+      </section>
+
+      <section class="card">
+        <h2 id="availability-form-title">Add Availability</h2>
+        <form id="availability-form">
+          <div class="form-row">
+            <label for="availability-day">Day of week</label>
+            <select id="availability-day">
+              <option value="0">Sunday</option>
+              <option value="1">Monday</option>
+              <option value="2">Tuesday</option>
+              <option value="3">Wednesday</option>
+              <option value="4">Thursday</option>
+              <option value="5">Friday</option>
+              <option value="6">Saturday</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="availability-start">Start</label>
+            <select id="availability-start"></select>
+          </div>
+          <div class="form-row">
+            <label for="availability-end">End</label>
+            <select id="availability-end"></select>
+          </div>
+          <button type="submit" id="availability-submit" class="btn btn-primary">Add</button>
+          <button type="button" id="availability-cancel" class="btn" hidden>Cancel edit</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>My Bookings</h2>
+        <div class="table-wrap">
+          <table class="table" id="doctor-bookings">
+            <thead>
+              <tr>
+                <th>Patient</th>
+                <th>Start</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="doctor-bookings-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

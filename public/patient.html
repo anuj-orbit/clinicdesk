@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClinicDesk - Patient</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="module" src="/js/patient.js"></script>
+</head>
+<body>
+  <header>
+    <span id="user-name"></span>
+    <button id="logout-btn" class="btn btn-danger">Logout</button>
+  </header>
+
+  <div id="status" class="status" aria-live="polite"></div>
+
+  <main class="container">
+    <section class="card">
+      <h2>Book an appointment</h2>
+
+      <div class="form-row">
+        <label for="doctor-select">Doctor</label>
+        <select id="doctor-select">
+          <option value="">Select a doctor</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="from-date">From date</label>
+        <input type="date" id="from-date">
+      </div>
+
+      <div id="slots" class="slots"></div>
+    </section>
+
+    <section class="card">
+      <h2>My bookings</h2>
+      <div class="table-wrap">
+        <table id="my-bookings" class="table">
+          <thead>
+            <tr>
+              <th>Doctor</th>
+              <th>Start</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
