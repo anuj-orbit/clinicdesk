@@ -147,7 +147,7 @@ async function cancelBooking(id) {
 (async function init() {
   let user;
   try {
-    user = await requireRole('doctor')();
+    user = await requireRole('doctor');
   } catch {
     return;
   }

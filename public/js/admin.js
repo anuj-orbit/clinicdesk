@@ -133,7 +133,7 @@ async function submitDoctor(event) {
 (async function init() {
   let user;
   try {
-    user = await requireRole('admin')();
+    user = await requireRole('admin');
   } catch {
     return;
   }

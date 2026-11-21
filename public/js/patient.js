@@ -149,7 +149,7 @@ doctorSelect.addEventListener('change', () => {
 fromDateInput.addEventListener('change', loadSlots);
 
 async function init() {
-  const user = await requireRole('patient')();
+  const user = await requireRole('patient');
   if (!user) return;
 
   fromDateInput.value = todayStr();
